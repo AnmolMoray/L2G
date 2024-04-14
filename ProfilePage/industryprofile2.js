@@ -85,6 +85,7 @@ populateProducts();
 document.addEventListener('click', async (event) => {
     if (event.target.classList.contains('delete-product')) {
         const productId = event.target.dataset.productid;
+        alert("Are You Sure Want to Delete?")
 
         // Delete product from database
         const { error } = await supabase

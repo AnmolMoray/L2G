@@ -40,7 +40,7 @@ async function fetchAndDisplayOrders() {
         // Fetch product name from product_desc table
         const { data: productData, error: productError } = await supabase
             .from('product_desc')
-            .select('product_details')
+            .select('product_name')
             .eq('product_id', product_id)
             .single();
 
@@ -49,7 +49,7 @@ async function fetchAndDisplayOrders() {
             continue; // Skip to next iteration
         }
 
-        const productName = productData.product_details;
+        const productName = productData.product_name;
 
         // Add order details to the orders array
         orders.push({ userEmail, productName });
@@ -62,9 +62,12 @@ async function fetchAndDisplayOrders() {
     for (const order of orders) {
         const orderHtml = `
             <div>
+            <div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" style="width: 18rem;">
+
                 <p>User Email: ${order.userEmail}</p>
                 <p>Product Name: ${order.productName}</p>
             </div>
+            </div)
             <hr>
         `;
         ordersContainer.innerHTML += orderHtml;

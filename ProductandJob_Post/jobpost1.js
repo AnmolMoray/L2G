@@ -43,6 +43,8 @@ async function populateOpenings() {
                             <div class="font-bold text-xl text-gray-900" id="jobtitle">${job_title}</div>
                             <p class="text-gray-800 font-serif text-base mb-5" id="jobdesc">${job_desc}</p>
                         </div>
+                        <br><br><br>
+
                         <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-4 containerProduct">
                             <div class="flex items-center justify-center">
                                 <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-4 py-3 px-6 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out apply-button" data-jobid="${job_id}">
@@ -74,6 +76,8 @@ async function populateOpenings() {
     document.addEventListener('click', async (event) => {
         if (event.target.classList.contains('apply-button')) {
             // Get the job ID from the dataset
+            alert("Are you sure want to Apply for job")
+            alert("Thank you for Applying to job , company will soon contact you on your Email id Provided!!")
             const jobId = event.target.dataset.jobid;
     
             // Fetch the user ID from local storage

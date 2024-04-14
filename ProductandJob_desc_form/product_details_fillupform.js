@@ -28,6 +28,7 @@ document.querySelector('form').addEventListener('submit', async function(event) 
                     { user_id: userId, product_name: productname, product_type: producttype, product_details: productdetails, contact_no: contactnumber, product_image: imageBase64,industry_name:industryname }
                 ]).then(({ data, error }) => {
                     if (error) {
+                        alert("PRoduct Details too long make it short")
                         console.error("Error inserting data into Supabase:", error.message);
                         // Handle error
                     } else {

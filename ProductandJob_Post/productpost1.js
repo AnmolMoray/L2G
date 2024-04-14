@@ -44,7 +44,7 @@ console.log(product_id)
                             <div class="flex mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-4 containerProduct">
                                 <div class="flex items-center justify-start">
                                     <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-4 py-3 px-6 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out buy-now" data-productid="${product_id}">
-                                        Show Intrest
+                                        Buy Now
                                     </button>
                                 </div>
                                 
@@ -67,6 +67,8 @@ console.log(product_id)
      document.addEventListener('click', async (event) => {
         if (event.target.classList.contains('buy-now')) {
             // Get the product ID from the dataset
+            alert("Are you sure want to place order")
+            alert("Thank you for placing order ,Our company will soon Contact you!!")
             const productId = event.target.dataset.productid;
             console.log(productId)
     

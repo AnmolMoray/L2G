@@ -66,8 +66,12 @@ async function fetchAndDisplayApplications() {
     for (const order of orders) {
         const orderHtml = `
             <div>
+            <div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" style="width: 18rem;">
+            
                 <p>Applicant Email: ${order.userEmail}</p>
                 <p>Job Title: ${order.jobtitle}</p>
+            </div>
+            
             </div>
             <hr>
         `;
